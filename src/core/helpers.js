@@ -1210,7 +1210,7 @@ function visible( element ) {
 		.length;
 }
 
-$.extend( $.expr[ ":" ], {
+$.extend( $.expr.pseudos, {
 	data: $.expr.createPseudo ? $.expr.createPseudo( function( dataName ) {
 		return function( elem ) {
 			return !!$.data( elem, dataName );
