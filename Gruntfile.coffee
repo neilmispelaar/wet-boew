@@ -290,7 +290,8 @@ module.exports = (grunt) ->
 				( file ) ->
 					contents = grunt.file.read file
 					contents = contents.replace /\.\.\/(wet\-boew|theme\-wet\-boew)/g, "$1"
-					contents = contents.replace /\"(?!https:\/\/github\.com)([^\"]*)?\.(js|css)\"/g, "\"$1.min.$2\""
+					# contents = contents.replace /\"(?!https:\/\/github\.com)([^\"]*)?\.(js|css)\"/g, "\"$1.min.$2\""
+					contents = contents.replace /\"(?!https:\/\/github\.com|https:\/\/code\.jquery\.com)([^\"]*)?\.(js|css)\"/g, "\"$1.min.$2\""
 
 					grunt.file.write file, contents
 			)
