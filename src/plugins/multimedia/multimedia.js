@@ -222,7 +222,7 @@ var componentName = "wb-mltmd",
 				json = captionElement.attr( "data" )
 					.replace( /(begin|dur|end)/g, "\"$1\"" )
 					.replace( /'/g, "\"" );
-				json = $.parseJSON( json );
+				json = JSON.parse( json );
 				begin = parseTime( json.begin );
 				end = json.end !== undef ?
 					parseTime( json.end ) :
